@@ -88,6 +88,16 @@ class Slide20191210 extends StatelessWidget {
               CenterStatementWidget('悔しいのでFlutter Desktopについて話します!'),
         ),
         BaseSlideWidget(
+          mainContentWidget: TitleSubtitleWidget(
+            titleText: '魅力',
+            subtitleElements: const [
+              'Flutterの美しいMaterialなUIが使える',
+              'Hot Reloadによる迅速な開発が可能',
+              'Packageなら使える(API改修などで使えないことも)'
+            ],
+          ),
+        ),
+        BaseSlideWidget(
           mainContentWidget: SizedBox(
             width: 600,
             child: Column(
@@ -128,6 +138,7 @@ flutter config —enable-windows-desktop
         BaseSlideWidget(
             mainContentWidget: CodeSyntaxWidget(
                 title: 'ターゲットプラットフォームのオーバーライド', lang: Syntax.DART, code: '''
+// UnKnown platfrom exeptionを防ぐために
 void _setTargetPlatformForDesktop() {
   if (Platform.isLinux || Platform.isWindows) {
     debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
@@ -139,16 +150,7 @@ void main() async {
   runApp(MyApp());
 }
         ''')),
-        BaseSlideWidget(
-          mainContentWidget: TitleSubtitleWidget(
-            titleText: '魅力',
-            subtitleElements: const [
-              'Flutterの美しいMaterialなUIが使える',
-              'Hot Reloadによる迅速な開発が可能',
-              'Packageなら使える(API改修などで使えないことも)'
-            ],
-          ),
-        ),
+
         BaseSlideWidget(
           mainContentWidget: TitleSubtitleWidget(
             titleText: 'Plugins',
@@ -332,8 +334,8 @@ dependencies:
             titleText: 'まとめ',
             subtitleElements: const [
               'macOSはAPIが安定しているため実際に動かしても安定していた(開発中クラッシュ0)',
-              'WindowsはGLFW→Win32→(UWP)、LinuxはGLFW→(GTK+?)に変更予定でプラグインの実装が無きものに可能性がある',
-              '(感想)macOS向けなら使っても良いかなと思いました'
+              'WindowsはGLFW→Win32→(UWP)、LinuxはGLFW→(GTK+?)に変更予定でプラグインの実装が無きものになる可能性がある',
+              '(感想)macOS向けなら自己責任で使っても良いかなと思いました'
             ],
           ),
         ),
