@@ -8,7 +8,6 @@ import 'package:flutter_desktop_example/droidkaigi/widgets/fetch_data_widget.dar
 import 'package:flutter_desktop_example/droidkaigi/widgets/file_picker_widget.dart';
 import 'package:flutter_desktop_example/droidkaigi/widgets/intro_slide.dart';
 import 'package:flutter_desktop_example/droidkaigi/widgets/keyboard_listener_widget.dart';
-import 'package:flutter_desktop_example/droidkaigi/widgets/set_menubar_widget.dart';
 import 'package:flutter_desktop_example/droidkaigi/widgets/table_20191210.dart';
 import 'package:flutter_desktop_example/droidkaigi/widgets/text_input_widget.dart';
 import 'package:flutter_desktop_example/droidkaigi/widgets/title_subtitle_widget.dart';
@@ -150,7 +149,6 @@ void main() async {
   runApp(MyApp());
 }
         ''')),
-
         BaseSlideWidget(
           mainContentWidget: TitleSubtitleWidget(
             titleText: 'Plugins',
@@ -228,7 +226,9 @@ dependencies:
           ),
         ),
         BaseSlideWidget(
-          mainContentWidget: SetMenubarWidget(),
+          mainContentWidget: Image.asset(
+            "assets/images/menu_bar.png",
+          ),
         ),
         BaseSlideWidget(
           mainContentWidget: TitleSubtitleWidget(
@@ -302,18 +302,6 @@ dependencies:
         BaseSlideWidget(
           mainContentWidget: FilePickerWidget(),
         ),
-//        BaseSlideWidget(
-//          mainContentWidget: TitleSubtitleWidget(
-//            titleText: '画面の情報取得',
-//            subtitleElements: const [
-//              'Flutter-desktop-embeddingのリポジトリにあるwindow_sizeでできます',
-//              'macOSとLinuxのみ'
-//            ],
-//          ),
-//        ),
-//        BaseSlideWidget(
-//          mainContentWidget: ScreenUtilWidget(),
-//        ),
         BaseSlideWidget(
           mainContentWidget: Column(
             mainAxisAlignment: MainAxisAlignment.center,

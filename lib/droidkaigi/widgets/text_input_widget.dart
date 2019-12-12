@@ -55,61 +55,64 @@ class _TextInputWidgetState extends State<TextInputWidget> {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: FlexibleFittedBox(
-                      child: TextField(
-                        decoration: new InputDecoration(
-                          border: new OutlineInputBorder(
-                            borderSide: new BorderSide(
+          child: SizedBox(
+            height: 800,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlexibleFittedBox(
+                        child: TextField(
+                          decoration: new InputDecoration(
+                            border: new OutlineInputBorder(
+                              borderSide: new BorderSide(
+                                color: Colors.white,
+                              ),
+                            ),
+                            focusedBorder: new OutlineInputBorder(
+                              borderSide: new BorderSide(
+                                color: Colors.white,
+                              ),
+                            ),
+                            disabledBorder: new OutlineInputBorder(
+                              borderSide: new BorderSide(
+                                color: Colors.white,
+                              ),
+                            ),
+                            labelText: '内容',
+                            labelStyle: smallTitleStyle,
+                            suffixStyle: const TextStyle(
                               color: Colors.white,
                             ),
                           ),
-                          focusedBorder: new OutlineInputBorder(
-                            borderSide: new BorderSide(
-                              color: Colors.white,
-                            ),
-                          ),
-                          disabledBorder: new OutlineInputBorder(
-                            borderSide: new BorderSide(
-                              color: Colors.white,
-                            ),
-                          ),
-                          labelText: '内容',
-                          labelStyle: smallTitleStyle,
-                          suffixStyle: const TextStyle(
-                            color: Colors.white,
-                          ),
+                          style: smallTitleStyle,
+                          minLines: 30,
+                          maxLines: 31,
+                          onChanged: (value) {
+                            setState(() {
+                              rawText = value;
+                            });
+                          },
                         ),
-                        style: smallTitleStyle,
-                        minLines: 50,
-                        maxLines: 51,
-                        onChanged: (value) {
-                          setState(() {
-                            rawText = value;
-                          });
-                        },
-                      ),
-                      heightFactor: 1,
-                      widthFactor: 1),
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: Html(
-                    data: htmld,
-                    defaultTextStyle: smallTitleStyle,
+                        heightFactor: 1,
+                        widthFactor: 1),
                   ),
                 ),
-              )
-            ],
+                Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: Html(
+                      data: htmld,
+                      defaultTextStyle: smallTitleStyle,
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
         SizedBox(
